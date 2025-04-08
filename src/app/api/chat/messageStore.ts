@@ -1,13 +1,12 @@
 import OpenAI from "openai";
 
-const messagesStore: {
-  [threadId: string]: OpenAI.Chat.ChatCompletionMessageParam[];
-} = {};
-
-type MessageStore = {
-  addMessage: (message: OpenAI.Chat.ChatCompletionMessageParam) => void;
-  messageList: OpenAI.Chat.Completions.ChatCompletionMessageParam[];
+export type DBMessage = OpenAI.Chat.ChatCompletionMessageParam & {
+  id?: string;
 };
+
+const messagesStore: {
+  [threadId: string]: DBMessage[];
+} = {};
 
 export const getMessageStore = (id: string) => {
   if (!messagesStore[id]) {
@@ -15,31 +14,20 @@ export const getMessageStore = (id: string) => {
   }
   const messageList = messagesStore[id];
   return {
-    addMessage: (message: OpenAI.Chat.ChatCompletionMessageParam) => {
+    addMessage: (message: DBMessage) => {
       messageList.push(message);
     },
     messageList,
-  };
-};
+    getOpenAICompatibleMessageList: () => {
+      return messageList.map((m) => {
+        const message = {
+          ...m,
+        };
 
-export const storeStreamingMessage = async (
-  message: ReadableStream<string>,
-  messageStore: MessageStore
-) => {
-  const reader = message.getReader();
-  let messageContent = "";
-  while (true) {
-    const { done, value } = await reader.read();
-    if (value) {
-      messageContent += value;
-    }
-    if (done) {
-      messageStore.addMessage({
-        role: "assistant",
-        content: messageContent,
+        delete message.id;
+
+        return message;
       });
-      break;
-    }
-  }
-  return messageContent;
+    },
+  };
 };
