@@ -1,4 +1,5 @@
 # C1 App Template
+
 This is a [C1 by Thesys](https://thesys.dev) project bootstrapped with `create-next-app`
 
 ## Getting Started
@@ -9,16 +10,21 @@ First, generate a new API key from [Thesys Console](https://chat.thesys.dev/cons
 export THESYS_API_KEY=<your-api-key>
 ```
 
+Install dependencies:
+
+```bash
+npm i
+```
+
 Then, run the development server:
 
 ```bash
-pnpm dev
+npm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing your responses by modifying the system prompt in `src/app/api/chat/route.ts`.
-
 
 ## Learn More
 
