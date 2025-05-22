@@ -1,0 +1,89 @@
+import React from "react";
+import {
+  BarChart3,
+  Calendar,
+  LayoutDashboard,
+  LineChart,
+  PieChart,
+  Users,
+  Settings,
+  FileText,
+  Clock,
+  HelpCircle,
+} from "lucide-react";
+
+type NavItem = {
+  icon: React.ReactNode;
+  label: string;
+  isActive?: boolean;
+};
+
+const primaryNavItems: NavItem[] = [
+  { icon: <LayoutDashboard size={20} />, label: "Dashboard", isActive: true },
+  { icon: <BarChart3 size={20} />, label: "Campaigns" },
+  { icon: <Users size={20} />, label: "Audience" },
+  { icon: <PieChart size={20} />, label: "Traffic Sources" },
+  { icon: <LineChart size={20} />, label: "Conversions" },
+  { icon: <Calendar size={20} />, label: "Schedule" },
+];
+
+const secondaryNavItems: NavItem[] = [
+  { icon: <FileText size={20} />, label: "Reports" },
+  { icon: <Clock size={20} />, label: "History" },
+  { icon: <Settings size={20} />, label: "Settings" },
+  { icon: <HelpCircle size={20} />, label: "Help & Support" },
+];
+
+const NavItem: React.FC<NavItem> = ({ icon, label, isActive }) => {
+  return (
+    <li>
+      <a
+        href="#"
+        className={`flex items-center gap-3 px-3 py-2 rounded-lg ${
+          isActive
+            ? "bg-blue-50 text-blue-700"
+            : "text-gray-700 hover:bg-gray-100"
+        }`}
+      >
+        <span className={isActive ? "text-blue-600" : "text-gray-500"}>
+          {icon}
+        </span>
+        <span className="text-sm font-medium">{label}</span>
+      </a>
+    </li>
+  );
+};
+
+const Sidebar: React.FC = () => {
+  return (
+    <aside className="w-64 overflow-y-auto bg-white border-r border-gray-200 pt-2">
+      <div className="p-4">
+        <nav className="space-y-1">
+          <div className="mb-8">
+            <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Analytics
+            </p>
+            <ul className="space-y-1">
+              {primaryNavItems.map((item) => (
+                <NavItem key={item.label} {...item} />
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="px-3 text-xs font-semibold text-gray-500 uppercase tracking-wider mb-2">
+              Support
+            </p>
+            <ul className="space-y-1">
+              {secondaryNavItems.map((item) => (
+                <NavItem key={item.label} {...item} />
+              ))}
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </aside>
+  );
+};
+
+export default Sidebar;
