@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Bell, ChevronDown, Search, Settings, User } from "lucide-react";
 import Link from "next/link";
+import { SkeletonCircle, SkeletonPill } from "./LowFidelityComponents";
 
-const Header: React.FC<{
+interface HeaderProps {
+  lowFidelity?: boolean;
   generateCardsHandler: (
     e: React.FormEvent<HTMLFormElement>,
     prompt: string
   ) => Promise<void>;
   loading: boolean;
-}> = ({ generateCardsHandler, loading }) => {
+}
+
+const Header: React.FC<HeaderProps> = ({
+  generateCardsHandler,
+  loading,
+  lowFidelity,
+}) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [prompt, setPrompt] = useState("");
 
@@ -36,8 +44,8 @@ const Header: React.FC<{
 
   return (
     <header
-      className={`w-full transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      className={`w-full transition-all duration-300 border-b border-gray-200 bg-white ${
+        isScrolled ? "shadow-sm" : ""
       }`}
     >
       <div className="max-w-full px-6">
@@ -50,15 +58,15 @@ const Header: React.FC<{
             </Link>
           </div>
 
-          <div className="hidden md:block w-1/3">
-            <div className="relative">
-              <form onSubmit={handleSubmit}>
+          <div className="hidden md:block w-1/2">
+            <div className="relative w-full">
+              <form onSubmit={handleSubmit} className="w-full">
                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                   <Search size={18} className="text-gray-400" />
                 </div>
                 <input
                   type="text"
-                  className={`block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm ${
+                  className={`w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm ${
                     loading ? "cursor-not-allowed opacity-50" : ""
                   }`}
                   placeholder="Ask anything about your data..."
@@ -71,19 +79,34 @@ const Header: React.FC<{
           </div>
 
           <div className="flex items-center space-x-4">
-            <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
-              <Bell size={20} />
-            </button>
-            <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
-              <Settings size={20} />
-            </button>
+            {lowFidelity ? (
+              <SkeletonCircle />
+            ) : (
+              <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
+                <Bell size={20} />
+              </button>
+            )}
+            {lowFidelity ? (
+              <SkeletonCircle />
+            ) : (
+              <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
+                <Settings size={20} />
+              </button>
+            )}
             <div className="flex items-center space-x-2 cursor-pointer">
               <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
                 <User size={16} />
               </div>
-              <span className="hidden md:block text-sm font-medium">
-                John Smith
-              </span>
+
+              {lowFidelity ? (
+                <div className="w-24">
+                  <SkeletonPill />
+                </div>
+              ) : (
+                <span className="hidden md:block text-sm font-medium">
+                  John Smith
+                </span>
+              )}
               <ChevronDown size={16} className="text-gray-500" />
             </div>
           </div>

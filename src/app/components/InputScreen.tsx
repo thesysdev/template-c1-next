@@ -23,16 +23,6 @@ export const InputScreen = ({
 
   return (
     <div className="flex h-screen w-full items-center justify-center bg-gray-100">
-      <div className="absolute top-0 left-0 w-full h-full opacity-10 overflow-hidden">
-        <div className="grid grid-cols-6 gap-4 p-8">
-          {[...Array(24)].map((_, i) => (
-            <div
-              key={i}
-              className="aspect-[2/3] bg-gradient-to-br from-gray-700 to-gray-600 rounded-lg shadow-2xl transform hover:scale-105 transition-transform"
-            ></div>
-          ))}
-        </div>
-      </div>
       <div className="flex flex-col items-center max-w-2xl w-full px-4 relative z-10">
         <div className="flex items-center gap-3 mb-3">
           <div className="w-12 h-12 bg-red-950 rounded-full flex items-center justify-center">
@@ -53,11 +43,19 @@ export const InputScreen = ({
               placeholder="Try asking something like: 'What were the top performing movies last month?' or 'Show me viewer engagement trends'"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
+              onKeyDown={(e) => {
+                if (e.key === "Enter" && !e.shiftKey) {
+                  e.preventDefault();
+                  handleSubmit(
+                    e as unknown as React.FormEvent<HTMLFormElement>
+                  );
+                }
+              }}
             />
             <div className="flex justify-end">
               <Button
                 variant="primary"
-                className="px-6 py-2 text-sm font-medium flex items-center gap-2 bg-red-600 hover:bg-red-700 transition-colors"
+                className="px-6 py-2 text-sm font-medium flex items-center gap-2"
                 type="submit"
                 disabled={loading}
               >

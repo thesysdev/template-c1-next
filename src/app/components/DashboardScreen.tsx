@@ -23,10 +23,14 @@ export const DashboardScreen = ({
   return (
     <div className="flex min-h-screen w-full">
       <div className="flex flex-col w-full">
-        <Header generateCardsHandler={generateCardsHandler} loading={loading} />
+        <Header
+          generateCardsHandler={generateCardsHandler}
+          loading={loading}
+          lowFidelity
+        />
 
         <div className="flex flex-1">
-          <Sidebar />
+          <Sidebar lowFidelity />
 
           {loading ? (
             <div className="flex-1 items-center justify-center p-4">
@@ -36,10 +40,7 @@ export const DashboardScreen = ({
             <div className="flex-1 items-center justify-center p-4">
               <div className="columns-2 gap-4">
                 {cardInfo.map((card) => (
-                  <div
-                    key={card.text}
-                    className="mb-4 break-inside-avoid"
-                  >
+                  <div key={card.text} className="mb-4 break-inside-avoid">
                     <AnalyticsCard prompt={card.text} />
                   </div>
                 ))}
