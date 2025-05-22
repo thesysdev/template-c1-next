@@ -53,7 +53,7 @@ const NavItem: React.FC<NavItem> = ({ icon, label, isActive, lowFidelity }) => {
             : ""
         }`}
       >
-        {!lowFidelity && (
+        {!lowFidelity || isActive && (
           <>
             <span className={isActive ? "text-blue-600" : "text-gray-500"}>
               {icon}

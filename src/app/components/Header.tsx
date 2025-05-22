@@ -1,24 +1,14 @@
 import React, { useState, useEffect } from "react";
-import { Bell, ChevronDown, Search, Settings, User } from "lucide-react";
+import { Bell, ChevronDown, Settings, User } from "lucide-react";
 import Link from "next/link";
 import { SkeletonCircle, SkeletonPill } from "./LowFidelityComponents";
 
 interface HeaderProps {
   lowFidelity?: boolean;
-  generateCardsHandler: (
-    e: React.FormEvent<HTMLFormElement>,
-    prompt: string
-  ) => Promise<void>;
-  loading: boolean;
 }
 
-const Header: React.FC<HeaderProps> = ({
-  generateCardsHandler,
-  loading,
-  lowFidelity,
-}) => {
+const Header: React.FC<HeaderProps> = ({ lowFidelity }) => {
   const [isScrolled, setIsScrolled] = useState(false);
-  const [prompt, setPrompt] = useState("");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,19 +18,6 @@ const Header: React.FC<HeaderProps> = ({
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    if (loading) return;
-    generateCardsHandler(e, prompt);
-    setPrompt("");
-  };
-
-  const inputChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-    e.preventDefault();
-    if (loading) return;
-    setPrompt(e.target.value);
-  };
 
   return (
     <header
@@ -59,23 +36,7 @@ const Header: React.FC<HeaderProps> = ({
           </div>
 
           <div className="hidden md:block w-1/2">
-            <div className="relative w-full">
-              <form onSubmit={handleSubmit} className="w-full">
-                <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                  <Search size={18} className="text-gray-400" />
-                </div>
-                <input
-                  type="text"
-                  className={`w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:placeholder-gray-400 focus:ring-1 focus:ring-primary focus:border-primary sm:text-sm ${
-                    loading ? "cursor-not-allowed opacity-50" : ""
-                  }`}
-                  placeholder="Ask anything about your data..."
-                  value={prompt}
-                  onChange={inputChangeHandler}
-                  disabled={loading}
-                />
-              </form>
-            </div>
+            <div className="relative w-full"></div>
           </div>
 
           <div className="flex items-center space-x-4">
