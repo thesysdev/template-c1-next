@@ -19,6 +19,7 @@ const Header: React.FC<HeaderProps> = ({ lowFidelity }) => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+
   return (
     <header
       className={`w-full transition-all duration-300 border-b border-gray-200 bg-white ${

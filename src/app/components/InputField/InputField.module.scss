@@ -1,0 +1,44 @@
+.searchContainer {
+  display: flex;
+  width: 584px;
+  margin: 0 auto;
+  border: 1px solid #e5e5e5;
+  border-radius: 18px;
+  padding: 0 16px;
+  height: 44px;
+  background: var(--container-fill);
+  backdrop-filter: blur(8px);
+  z-index: 20;
+
+  input {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: var(--primary-text);
+    background: transparent;
+  }
+}
+
+.inputField {
+  composes: searchContainer;
+  position: absolute;
+  transform: translate(calc(-50% + 50vw), var(--top));
+}
+
+.translatedInputField {
+  animation: moveInputField 1s ease-in-out forwards;
+}
+
+@keyframes moveInputField {
+  from {
+    transform: translate(calc(-50% + 50vw), var(--top));
+  }
+  50% {
+    transform: translate(271px, 80px);
+  }
+  to {
+    width: calc(100% - 255px - 32px);
+    transform: translate(271px, 80px);
+  }
+}
