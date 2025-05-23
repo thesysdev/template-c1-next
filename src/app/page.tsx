@@ -7,6 +7,7 @@ import { InputScreen } from "./components/InputScreen";
 import { DashboardScreen } from "./components/DashboardScreen";
 import { InputField } from "./components/InputField/InputField";
 import { AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
+import Header from "./components/Header";
 
 export interface CardInfo {
   text: string; // card prompt
@@ -60,6 +61,7 @@ export default function Home() {
   return (
     <LazyMotion features={domAnimation}>
       <ThemeProvider mode="light">
+        <Header />
         <InputField
           handleSubmit={(e: React.FormEvent<HTMLFormElement>) =>
             generateCardsHandler(e, prompt)

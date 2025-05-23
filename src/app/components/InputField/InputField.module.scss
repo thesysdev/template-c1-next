@@ -36,10 +36,10 @@
     transform: translate(calc(-50% + 50vw), var(--top));
   }
   50% {
-    transform: translate(271px, 80px);
+    transform: translate(271px, 64px); /* 48px (header height) + 16px (padding) */
   }
   to {
     width: calc(100% - 255px - 32px);
-    transform: translate(271px, 80px);
+    transform: translate(271px, 64px);
   }
 }

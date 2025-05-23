@@ -1,80 +1,54 @@
-import React, { useState, useEffect } from "react";
-import { Bell, ChevronDown, Settings, User } from "lucide-react";
-import Link from "next/link";
-import { SkeletonCircle, SkeletonPill } from "./LowFidelityComponents";
-
-interface HeaderProps {
-  lowFidelity?: boolean;
-}
-
-const Header: React.FC<HeaderProps> = ({ lowFidelity }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 10);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
+import React from "react";
+import Image from "next/image";
+import { Button } from "@crayonai/react-ui";
+import { Github, ArrowRight } from "lucide-react";
 
 
+const Header: React.FC = () => {
   return (
-    <header
-      className={`w-full transition-all duration-300 border-b border-gray-200 bg-white ${
-        isScrolled ? "shadow-sm" : ""
-      }`}
-    >
-      <div className="max-w-full px-6">
-        <div className="flex justify-between items-center h-16">
+    <div className="fixed top-0 left-0 w-full z-30 bg-container">
+      <div className="flex items-center justify-between px-6 py-3">
+        <div className="flex items-center gap-2">
+          <Image
+            src="/thesys-navbar.svg"
+            alt="Chat with C1"
+            width={36}
+            height={36}
+            className="rounded-lg"
+          />
           <div className="flex items-center">
-            <Link href="/" onClick={() => window.location.reload()}>
-              <h1 className="text-xl font-semibold text-gray-900">
-                Marketing Analytics
-              </h1>
-            </Link>
-          </div>
-
-          <div className="hidden md:block w-1/2">
-            <div className="relative w-full"></div>
-          </div>
-
-          <div className="flex items-center space-x-4">
-            {lowFidelity ? (
-              <SkeletonCircle />
-            ) : (
-              <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
-                <Bell size={20} />
-              </button>
-            )}
-            {lowFidelity ? (
-              <SkeletonCircle />
-            ) : (
-              <button className="p-1.5 rounded-full text-gray-500 hover:text-gray-700 hover:bg-gray-100 focus:outline-none">
-                <Settings size={20} />
-              </button>
-            )}
-            <div className="flex items-center space-x-2 cursor-pointer">
-              <div className="h-8 w-8 rounded-full bg-gray-200 flex items-center justify-center">
-                <User size={16} />
-              </div>
-
-              {lowFidelity ? (
-                <div className="w-24">
-                  <SkeletonPill />
-                </div>
-              ) : (
-                <span className="hidden md:block text-sm font-medium">
-                  John Smith
-                </span>
-              )}
-              <ChevronDown size={16} className="text-gray-500" />
-            </div>
+            <h1 className="text-primary">
+              Analytics + C1 <span className="text-secondary">by thesys</span>
+            </h1>
           </div>
         </div>
+        <div className="flex items-center gap-2">
+          <Button
+            variant="secondary"
+            size="medium"
+            onClick={() =>
+              window.open(
+                "https://github.com/thesysdev/analytics-with-c1",
+                "_blank"
+              )
+            }
+          >
+            <Github className="h-4 w-4" />
+            Github
+          </Button>
+          <Button
+            variant="secondary"
+            size="medium"
+            onClick={() =>
+              window.open("https://docs.thesys.dev/welcome", "_blank")
+            }
+          >
+            Build with Thesys
+            <ArrowRight className="h-4 w-4" />
+          </Button>
+        </div>
       </div>
-    </header>
+    </div>
   );
 };
 
