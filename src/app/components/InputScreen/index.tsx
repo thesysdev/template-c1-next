@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { m } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
 interface InputScreenProps {
@@ -9,12 +9,12 @@ interface InputScreenProps {
 
 export const InputScreen = ({ loading, titleRef }: InputScreenProps) => {
   return (
-    <motion.div
+    <m.div
       className="flex flex-col justify-center h-screen w-screen relative"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
     >
       {!loading && (
         <div className="fixed inset-0 w-full h-full z-0 overflow-hidden">
@@ -66,6 +66,6 @@ export const InputScreen = ({ loading, titleRef }: InputScreenProps) => {
           </p>
         </div>
       </div>
-    </motion.div>
+    </m.div>
   );
 };

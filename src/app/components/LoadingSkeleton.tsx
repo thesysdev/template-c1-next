@@ -1,5 +1,5 @@
 export const LoadingSkeleton = () => (
-  <div className="grid grid-cols-12 auto-rows-auto gap-4">
+  <div className="grid grid-cols-12 auto-rows-auto gap-4 pt-[58px]">
     <div className="col-span-4 h-48 rounded-lg bg-gray-300 animate-pulse" />
     <div className="col-span-4 h-48 rounded-lg bg-gray-300 animate-pulse" />
     <div className="col-span-4 h-48 rounded-lg bg-gray-300 animate-pulse" />

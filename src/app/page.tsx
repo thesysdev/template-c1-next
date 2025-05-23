@@ -6,7 +6,7 @@ import { useState, useRef, useEffect } from "react";
 import { InputScreen } from "./components/InputScreen";
 import { DashboardScreen } from "./components/DashboardScreen";
 import { InputField } from "./components/InputField/InputField";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, domAnimation, LazyMotion } from "framer-motion";
 
 export interface CardInfo {
   text: string; // card prompt
@@ -18,8 +18,8 @@ export default function Home() {
   const [cards, setCards] = useState<CardInfo[]>([]);
   const [prompt, setPrompt] = useState("");
   const titleRef = useRef<HTMLDivElement>(null);
-  const resultsContainerRef = useRef<HTMLDivElement>(null);
   const [inputTop, setInputTop] = useState(0);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   useEffect(() => {
     const updateInputPosition = () => {
@@ -40,6 +40,7 @@ export default function Home() {
   ) => {
     e.preventDefault();
     try {
+      setIsSubmitted(true);
       setLoading(true);
       const response = await fetch("/api/cards", {
         method: "POST",
@@ -57,7 +58,7 @@ export default function Home() {
   console.log("input field top: ", inputTop);
 
   return (
-    <AnimatePresence mode="wait">
+    <LazyMotion features={domAnimation}>
       <ThemeProvider mode="light">
         <InputField
           handleSubmit={(e: React.FormEvent<HTMLFormElement>) =>
@@ -67,22 +68,24 @@ export default function Home() {
           onChange={setPrompt}
           placeholder="Search anything..."
           top={inputTop}
-          translated={cards.length > 0}
+          translated={isSubmitted}
         />
-        {!cards.length ? (
-          <InputScreen
-            key="input-screen"
-            loading={loading}
-            titleRef={titleRef}
-          />
-        ) : (
-          <DashboardScreen
-            cardInfo={cards}
-            loading={loading}
-            resultsContainerRef={resultsContainerRef}
-          />
-        )}
+        <AnimatePresence mode="wait">
+          {!isSubmitted ? (
+            <InputScreen
+              key="input-screen"
+              loading={loading}
+              titleRef={titleRef}
+            />
+          ) : (
+            <DashboardScreen
+              key="dashboard-screen"
+              cardInfo={cards}
+              loading={loading}
+            />
+          )}
+        </AnimatePresence>
       </ThemeProvider>
-    </AnimatePresence>
+    </LazyMotion>
   );
 }

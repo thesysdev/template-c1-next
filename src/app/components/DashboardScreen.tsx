@@ -5,30 +5,31 @@ import Sidebar from "./Sidebar";
 import Header from "./Header";
 import { LoadingSkeleton } from "./LoadingSkeleton";
 import { Button } from "@crayonai/react-ui";
+import { m } from "framer-motion";
 
 interface DashboardScreenProps {
   cardInfo: CardInfo[];
   loading: boolean;
-  resultsContainerRef: React.RefObject<HTMLDivElement | null>;
 }
 
 export const DashboardScreen = ({
   cardInfo,
   loading,
-  resultsContainerRef,
 }: DashboardScreenProps) => {
   return (
-    <div className="flex min-h-screen w-full">
+    <m.div
+      className="flex min-h-screen w-full"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, ease: "easeInOut" }}
+    >
       <div className="flex flex-col w-full bg-black/1">
         <Header lowFidelity />
 
         <div className="flex flex-1">
           <Sidebar lowFidelity />
 
-          <div
-            className="flex-1 items-center justify-center p-4"
-            ref={resultsContainerRef}
-          >
+          <div className="flex-1 items-center justify-center p-4">
             {loading ? (
               <LoadingSkeleton />
             ) : (
@@ -65,6 +66,6 @@ export const DashboardScreen = ({
           </div>
         </div>
       </div>
-    </div>
+    </m.div>
   );
 };

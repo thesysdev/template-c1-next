@@ -23,6 +23,7 @@
 .inputField {
   composes: searchContainer;
   position: absolute;
+  transition: all 0.5s ease-in-out;
   transform: translate(calc(-50% + 50vw), var(--top));
 }
 

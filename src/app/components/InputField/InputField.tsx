@@ -27,6 +27,13 @@ export const InputField = ({
       className={`${styles.inputField} ${
         translated ? styles.translatedInputField : ""
       }`}
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      transition={{ duration: 2, ease: "easeInOut" }}
       style={{ "--top": `${top}px` } as React.CSSProperties}
     >
       <form
