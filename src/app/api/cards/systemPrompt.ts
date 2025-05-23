@@ -20,7 +20,7 @@ export const systemPrompt = `
   <rules>
     - The prompts should describe the card UI and the information to display in detail. For cards containing visual elements like charts and tables, the prompt should describe the data to display in the chart/table in CSV format.
     - Any user prompt that requests something other than analytics data should result in a JSON with an empty list of prompts.
-    - Generate a minimum of 2 prompts and a maximum of 6 prompts.
+    - Generate a minimum of 6 prompts and a maximum of 8 prompts. Avoid generating prompts that are too similar to each other and would display redundant information.
     - The cards are automatically wrapped around in a grid layout. Make sure that each row takes up the full width of the grid. Example scenarios:
       - 2 cards: 1 card spans 4 columns, the other spans 8 columns.
       - 3 cards: 1 card spans 4 columns, the other two each span 4 columns.
