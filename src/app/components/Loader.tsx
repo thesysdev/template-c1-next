@@ -86,7 +86,7 @@ export const Loader = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center w-full h-full gap">
+    <div className="flex flex-col items-center justify-center w-full h-full gap text-center">
       <Shimmer as="h1" className="text-2xl font-medium">
         {loadingTexts[loadingTextIndex].title}
       </Shimmer>
