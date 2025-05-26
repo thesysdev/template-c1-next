@@ -33,7 +33,6 @@ export const makeApiCall = async ({
   try {
     // Cancel any ongoing request before starting a new one
     if (abortController) {
-      console.log("aborting in-flight requests");
       abortController.abort();
     }
 

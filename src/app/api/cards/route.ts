@@ -11,8 +11,6 @@ export async function POST(req: NextRequest) {
     apiKey: process.env.OPENAI_API_KEY,
   });
 
-  console.log("systemPrompt", systemPrompt);
-
   const llmResponse = await client.responses.parse({
     model: "gpt-4o-mini",
     input: [
@@ -30,8 +28,6 @@ export async function POST(req: NextRequest) {
     },
     stream: false,
   });
-
-  console.log("llmStream: ", llmResponse);
 
   return new NextResponse(JSON.stringify(llmResponse.output_parsed), {
     headers: {

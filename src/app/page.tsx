@@ -56,8 +56,6 @@ export default function Home() {
     }
   };
 
-  console.log("input field top: ", inputTop);
-
   return (
     <LazyMotion features={domAnimation}>
       <ThemeProvider mode="light">
