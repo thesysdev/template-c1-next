@@ -25,7 +25,6 @@ export const InputScreen = ({ loading, titleRef }: InputScreenProps) => {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 backdrop-blur-[2px]"></div>
         </div>
       )}
 
