@@ -71,8 +71,8 @@ export const DashboardScreen = ({
             {loading ? (
               <Loader />
             ) : (
-              <div className="flex flex-col gap-4 pt-[60px] pb-[100px]">
-                <div className="columns-2 gap-4">
+              <div className="flex flex-col gap-4 pt-[60px] pb-[100px] max-w-full">
+                <div className="columns-1 xl:columns-2 gap-4">
                   {cardInfo.map((card) => (
                     <div key={card.text} className="mb-4 break-inside-avoid">
                       <AnalyticsCard
