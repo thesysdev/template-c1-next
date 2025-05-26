@@ -72,7 +72,7 @@ interface SidebarProps {
 
 const Sidebar: React.FC<SidebarProps> = ({ lowFidelity }) => {
   return (
-    <aside className="w-64 overflow-y-auto bg-white border-r border-gray-200 pt-2">
+    <aside className="w-64 overflow-y-auto bg-white border-r border-gray-200 pt-2 hidden lg:block">
       <div className="p-4">
         <nav className="space-y-1">
           <div className="mb-8">

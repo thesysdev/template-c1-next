@@ -34,7 +34,7 @@ const Header: React.FC = () => {
             }
           >
             <Github className="h-4 w-4" />
-            Github
+            <span className="hidden md:block">Github</span>
           </Button>
           <Button
             variant="secondary"
@@ -43,7 +43,8 @@ const Header: React.FC = () => {
               window.open("https://docs.thesys.dev/welcome", "_blank")
             }
           >
-            Build with Thesys
+            <span className="block md:hidden">Build</span>
+            <span className="hidden md:block">Build with Thesys</span>
             <ArrowRight className="h-4 w-4" />
           </Button>
         </div>
