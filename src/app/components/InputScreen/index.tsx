@@ -52,14 +52,14 @@ export const InputScreen = ({ loading, titleRef }: InputScreenProps) => {
             priority
           />
           <p className="text-black/40 text-sm flex items-center gap-[0.5ch]">
-            This is an experiment built in{" "}
+            This is an experiment built with C1 by
             <span
               className="text-black text-sm cursor-pointer flex items-center gap-[0.5ch] hover:underline"
               onClick={() => {
-                window.open("https://github.com/thesysdev/examples", "_blank");
+                window.open("https://thesys.dev", "_blank");
               }}
             >
-              Thesys Demos
+              Thesys
               <ArrowRight size={16} />
             </span>
           </p>

@@ -1,35 +1,26 @@
 import { NextRequest, NextResponse } from "next/server";
-import OpenAI from "openai";
 import { outputSchema, systemPrompt } from "./systemPrompt";
-import { zodTextFormat } from "openai/helpers/zod.mjs";
+import { zodToJsonSchema } from "zod-to-json-schema";
+import { GoogleGenAI } from "@google/genai";
+
+const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
 
 export async function POST(req: NextRequest) {
   const { prompt } = (await req.json()) as {
     prompt: string;
   };
-  const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
 
-  const llmResponse = await client.responses.parse({
-    model: "gpt-4o-mini",
-    input: [
-      {
-        role: "system",
-        content: systemPrompt,
-      },
-      {
-        role: "user",
-        content: prompt,
-      },
-    ],
-    text: {
-      format: zodTextFormat(outputSchema, "OutputSchema"),
+  const llmResponse = await ai.models.generateContent({
+    model: "gemini-1.5-pro",
+    contents: prompt,
+    config: {
+      systemInstruction: systemPrompt,
+      responseMimeType: "application/json",
+      responseSchema: zodToJsonSchema(outputSchema),
     },
-    stream: false,
   });
 
-  return new NextResponse(JSON.stringify(llmResponse.output_parsed), {
+  return new NextResponse(llmResponse.text, {
     headers: {
       "Content-Type": "application/json",
       "Cache-Control": "no-cache, no-transform",

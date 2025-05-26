@@ -11,12 +11,12 @@ import Header from "./components/Header";
 
 export interface CardInfo {
   text: string; // card prompt
-  columns: number; // number of columns (of 12) the card should span
 }
 
 export default function Home() {
   const [loading, setLoading] = useState(false);
   const [cards, setCards] = useState<CardInfo[]>([]);
+  const [isPromptsFetchError, setIsPromptsFetchError] = useState(false);
   const [prompt, setPrompt] = useState("");
   const titleRef = useRef<HTMLDivElement>(null);
   const [inputTop, setInputTop] = useState(0);
@@ -49,8 +49,8 @@ export default function Home() {
       });
       const data: { prompts: CardInfo[] } = await response.json();
       setCards(data.prompts);
-    } catch (err) {
-      console.error(err);
+    } catch {
+      setIsPromptsFetchError(true);
     } finally {
       setLoading(false);
     }
@@ -82,6 +82,7 @@ export default function Home() {
               key="dashboard-screen"
               cardInfo={cards}
               loading={loading}
+              isPromptsFetchError={isPromptsFetchError}
             />
           )}
         </AnimatePresence>

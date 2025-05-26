@@ -11,6 +11,7 @@ import { useCallback, useEffect, useState } from "react";
 interface DashboardScreenProps {
   cardInfo: CardInfo[];
   loading: boolean;
+  isPromptsFetchError?: boolean;
 }
 
 interface CardStreamingState {
@@ -21,6 +22,7 @@ interface CardStreamingState {
 export const DashboardScreen = ({
   cardInfo,
   loading,
+  isPromptsFetchError,
 }: DashboardScreenProps) => {
   const [cardStreamingStates, setCardStreamingStates] = useState<
     CardStreamingState[]
@@ -54,6 +56,8 @@ export const DashboardScreen = ({
     (card) => card.status === "done"
   );
 
+  const noResponsesAvailable = cardInfo.length === 0 && !isPromptsFetchError;
+
   return (
     <m.div
       className="flex min-h-screen w-full"
@@ -70,6 +74,14 @@ export const DashboardScreen = ({
           <div className="flex-1 items-center justify-center p-4">
             {loading ? (
               <Loader />
+            ) : isPromptsFetchError || noResponsesAvailable ? (
+              <div className="flex flex-col gap-4 pt-[60px] pb-[100px] w-full h-full justify-center items-center">
+                <p className="text-sm text-red-500/80">
+                  {isPromptsFetchError
+                    ? "There was an error fetching your data. Please try again."
+                    : "It looks like your prompt didn't result in any data. Please try again with a different prompt."}
+                </p>
+              </div>
             ) : (
               <div className="flex flex-col gap-4 pt-[60px] pb-[100px] max-w-full">
                 <div className="columns-1 xl:columns-2 gap-4">
@@ -82,9 +94,8 @@ export const DashboardScreen = ({
                     </div>
                   ))}
                 </div>
-
                 <AnimatePresence>
-                  {allCardsDoneStreaming && (
+                  {(allCardsDoneStreaming || isPromptsFetchError) && (
                     <m.div
                       key="footer"
                       className="text-center mt-[100px] flex flex-col items-center gap-[24px]"
