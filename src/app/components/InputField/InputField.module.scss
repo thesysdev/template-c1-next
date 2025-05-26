@@ -1,6 +1,6 @@
 .searchContainer {
   display: flex;
-  width: 584px;
+  width: 90%;
   margin: 0 auto;
   border: 1px solid #e5e5e5;
   border-radius: 18px;
@@ -28,18 +28,49 @@
 }
 
 .translatedInputField {
-  animation: moveInputField 1s ease-in-out forwards;
+  animation: moveInputFieldMobile 1s ease-in-out forwards;
 }
 
-@keyframes moveInputField {
+@keyframes moveInputFieldMobile {
   from {
     transform: translate(calc(-50% + 50vw), var(--top));
   }
   50% {
-    transform: translate(271px, 64px); /* 48px (header height) + 16px (padding) */
+    transform: translate(calc(-50% + 50vw), 64px);
+  }
+  to {
+    transform: translate(calc(-50% + 50vw), 64px);
+  }
+}
+
+@keyframes moveInputFieldDesktop {
+  from {
+    transform: translate(calc(-50% + 50vw), var(--top));
+  }
+  50% {
+    transform: translate(
+      271px,
+      64px
+    ); /* 48px (header height) + 16px (padding) */
   }
   to {
     width: calc(100% - 255px - 32px);
     transform: translate(271px, 64px);
+  }
+}
+
+@media (min-width: 768px) {
+  .inputField {
+    width: 75%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .inputField {
+    width: 584px;
+  }
+
+  .translatedInputField {
+    animation: moveInputFieldDesktop 1s ease-in-out forwards;
   }
 }
