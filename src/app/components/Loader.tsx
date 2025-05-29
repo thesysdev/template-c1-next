@@ -80,7 +80,7 @@ export const Loader = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setLoadingTextIndex((prev) => (prev + 1) % loadingTexts.length);
-    }, 2500);
+    }, 4000);
 
     return () => clearInterval(intervalId);
   }, []);
