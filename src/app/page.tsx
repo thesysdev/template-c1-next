@@ -47,9 +47,7 @@ export default function Home() {
         method: "POST",
         body: JSON.stringify({ prompt }),
       });
-      console.log("response: ", response);
       const data: { prompts: CardInfo[] } = await response.json();
-      console.log("parsed response: ", data);
       setCards(data.prompts);
     } catch (error) {
       console.error(

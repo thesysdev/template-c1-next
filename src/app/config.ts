@@ -49,7 +49,6 @@ export const config: Config = {
 
   processToolCalls: async (toolCalls) => {
     const mcpClient = await config.fetchMcpClient?.();
-    console.log("in processToolCalls with toolCalls: ", toolCalls);
 
     // process all tool calls in parallel
     const toolCallResults = await Promise.all(

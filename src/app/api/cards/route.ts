@@ -73,9 +73,6 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    console.log("llmResponse2: ", llmResponse2);
-    console.log("passed conversation history: ", conversationHistory);
-
     return new NextResponse(llmResponse2.text, {
       headers: {
         "Content-Type": "application/json",
