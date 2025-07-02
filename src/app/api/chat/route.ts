@@ -26,7 +26,9 @@ export async function POST(req: NextRequest) {
   const responseStream = transformStream(
     llmStream,
     (chunk) => {
-      return chunk.choices[0].delta.content;
+      if (chunk.choices[0] && chunk.choices[0].delta) {
+        return chunk.choices[0].delta.content;
+      }
     },
     {
       onEnd: ({ accumulated }) => {
