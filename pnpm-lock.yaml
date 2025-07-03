@@ -10,25 +10,34 @@ importers:
     dependencies:
       '@crayonai/react-ui':
         specifier: ^0.7.10
-        version: 0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
+        version: 0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
       '@crayonai/stream':
         specifier: ^0.6.4
-        version: 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67)
+        version: 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71)
       '@thesysai/genui-sdk':
         specifier: ^0.6.18
-        version: 0.6.25(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(lucide-react@0.469.0(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+        version: 0.6.25(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(lucide-react@0.469.0(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      google-images:
+        specifier: ^2.1.0
+        version: 2.1.0
       next:
         specifier: 15.2.4
         version: 15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       openai:
         specifier: ^4.91.1
-        version: 4.104.0(zod@3.25.67)
+        version: 4.104.0(zod@3.25.71)
       react:
         specifier: ^19.0.0
         version: 19.1.0
       react-dom:
         specifier: ^19.0.0
         version: 19.1.0(react@19.1.0)
+      zod:
+        specifier: ^3.25.71
+        version: 3.25.71
+      zod-to-json-schema:
+        specifier: ^3.24.6
+        version: 3.24.6(zod@3.25.71)
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
@@ -36,6 +45,9 @@ importers:
       '@tailwindcss/postcss':
         specifier: ^4
         version: 4.1.11
+      '@types/google-images':
+        specifier: ^2.1.4
+        version: 2.1.4
       '@types/node':
         specifier: ^20
         version: 20.19.2
@@ -982,6 +994,9 @@ packages:
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
 
+  '@types/google-images@2.1.4':
+    resolution: {integrity: sha512-HeMrPIHXMcPxu568NIHdE0uiDyYsVyUNi6+s9geXrzWERBkbtNONz0oe+QUSkQG3Q88sMfhYypg49mUGpQEsIQ==}
+
   '@types/hast@2.3.10':
     resolution: {integrity: sha512-McWspRw8xx8J9HurkVBfYj0xKoE25tOFlHGdx4MJ5xORQrMGZNqJhVQWaIbm6Oyla5kYOXtDiopzKRJzEOkwJw==}
 
@@ -996,6 +1011,9 @@ packages:
 
   '@types/katex@0.16.7':
     resolution: {integrity: sha512-HMwFiRujE5PjrgwHQ25+bsLJgowjGjm5Z8FVSf0N6PwgJrwxH0QxzHYDcKsTfV3wva0vzrpqMTJS2jXPr5BMEQ==}
+
+  '@types/keyv@3.1.4':
+    resolution: {integrity: sha512-BQ5aZNSCpj7D6K2ksrRCTmKRLEpnPvWDiLPfoGyhZ++8YtiK9d/3DBKPJgry359X/P1PfruyYwvnvwFjuEiEIg==}
 
   '@types/mdast@4.0.4':
     resolution: {integrity: sha512-kGaNbPh1k7AFzgpud/gMdvIm5xuECykRR+JnWKQno9TAXVa6WIVCGTPvYGekIDL4uwCZQSYbUxNBSb1aUo79oA==}
@@ -1019,6 +1037,9 @@ packages:
 
   '@types/react@19.1.8':
     resolution: {integrity: sha512-AwAfQ2Wa5bCx9WP8nZL2uMZWod7J7/JSplxbTmBQ5ms6QpqNYm672H0Vu9ZVKVngQ+ii4R/byguVEUZQyeg44g==}
+
+  '@types/responselike@1.0.3':
+    resolution: {integrity: sha512-H/+L+UkTV33uf49PH5pCAUBVPNj2nDBXTN+qS1dOwyyg24l3CcicicCA7ca+HMvJBZcFgl5r8e+RR6elsb4Lyw==}
 
   '@types/unist@2.0.11':
     resolution: {integrity: sha512-CmBKiL6NNo/OqgmMn95Fk9Whlp2mtvIv+KNpQKN2F4SjvrEesubTRWGYSg+BnWZOnlCaSTU1sMpsBOzgbYhnsA==}
@@ -1315,6 +1336,10 @@ packages:
   caniuse-lite@1.0.30001726:
     resolution: {integrity: sha512-VQAUIUzBiZ/UnlM28fSp2CRF3ivUn1BWEvxMcVTNwpw91Py1pGbPIyIKtd+tzct9C3ouceCVdGAXxZOpZAsgdw==}
 
+  capture-stack-trace@1.0.2:
+    resolution: {integrity: sha512-X/WM2UQs6VMHUtjUDnZTRI+i1crWteJySFzr9UpGoQa4WQffXVTTXuekjl7TjZRlcF2XfjgITT0HxZ9RnxeT0w==}
+    engines: {node: '>=0.10.0'}
+
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
 
@@ -1388,6 +1413,10 @@ packages:
 
   concat-map@0.0.1:
     resolution: {integrity: sha512-/Srv4dswyQNBfohGpz9o6Yb3Gz3SrUDqBH5rTuhGR7ahtlbYKnVxw2bCFMRljaA7EXHaXZ8wsHdodFvbkhKmqg==}
+
+  create-error-class@3.0.2:
+    resolution: {integrity: sha512-gYTKKexFO3kh200H1Nit76sRwRtOY32vQd3jpAQKpLtZqyNsSQNfI4N7o3eP2wUjV35pTWKRYqFUDBvUha/Pkw==}
+    engines: {node: '>=0.10.0'}
 
   cross-spawn@7.0.6:
     resolution: {integrity: sha512-uV2QOWP2nWzsy2aMp8aRibhi9dlzF5Hgh5SHaB9OiTGEyDTiJJyx0uy51QXdyWbtAHNua4XJzUKca3OzKUd3vA==}
@@ -1536,6 +1565,9 @@ packages:
   dunder-proto@1.0.1:
     resolution: {integrity: sha512-KIN/nDJBQRcXw0MLVhZE9iQHmG68qAVIBg9CqmUYjmQIhgij9U5MFvrqkUL5FbtyyzZuOeOt0zdeRe4UY7ct+A==}
     engines: {node: '>= 0.4'}
+
+  duplexer3@0.1.5:
+    resolution: {integrity: sha512-1A8za6ws41LQgv9HrE/66jyC5yuSjQ3L/KOpFtoBilsAK2iA2wuS5rTt1OCzIvtS2V7nVmedsUU+DGRcjBmOYA==}
 
   emoji-regex@9.2.2:
     resolution: {integrity: sha512-L18DaJsXSUk2+42pv8mLs5jJT2hqFkFE4j21wOmgbUqsZ2hL72NsUU785g9RXgo3s0ZNgVl42TiHp3ZtOv/Vyg==}
@@ -1830,6 +1862,10 @@ packages:
     resolution: {integrity: sha512-sTSfBjoXBp89JvIKIefqw7U2CCebsc74kiY6awiGogKtoSGbgjYE/G/+l9sF3MWFPNc9IcoOC4ODfKHfxFmp0g==}
     engines: {node: '>= 0.4'}
 
+  get-stream@3.0.0:
+    resolution: {integrity: sha512-GlhdIUuVakc8SJ6kK0zAFbiGzRFzNnY4jUuEbV9UROo4Y+0Ny4fjvcZFVTeDA4odpFyOQzaw6hXukJSq/f28sQ==}
+    engines: {node: '>=4'}
+
   get-symbol-description@1.1.0:
     resolution: {integrity: sha512-w9UMqWwJxHNOvoNzSJ2oPF5wvYcvP7jUvYzhp67yEhTi17ZDBBC1z9pTdGuzjD+EFIqLSYRweZjqfiPzQ06Ebg==}
     engines: {node: '>= 0.4'}
@@ -1853,9 +1889,17 @@ packages:
     resolution: {integrity: sha512-DpLKbNU4WylpxJykQujfCcwYWiV/Jhm50Goo0wrVILAv5jOr9d+H+UR3PhSCD2rCCEIg0uc+G+muBTwD54JhDQ==}
     engines: {node: '>= 0.4'}
 
+  google-images@2.1.0:
+    resolution: {integrity: sha512-1XPWa6N5BhAuO6fffp2WqeyNaxX0kqowrcIE2QNjQpabvIXzbcDMOJGfBKbJIGFsA+n2esF95po2p7mVdYBtyA==}
+    engines: {node: '>= 4'}
+
   gopd@1.2.0:
     resolution: {integrity: sha512-ZUKRh6/kUFoAiTAtTYPZJ3hw9wNxx+BIBOijnlG9PnrJsCcSjs1wyyD6vJpaYtgnzDrKYRSqf3OO6Rfa93xsRg==}
     engines: {node: '>= 0.4'}
+
+  got@6.7.1:
+    resolution: {integrity: sha512-Y/K3EDuiQN9rTZhBvPRWMLXIKdeD1Rj0nzunfoi0Yyn5WBEbzxXKU9Ub2X41oZBagVWOBU3MuDonFMgPWQFnwg==}
+    engines: {node: '>=4'}
 
   graceful-fs@4.2.11:
     resolution: {integrity: sha512-RbJ5/jmFcNNCcDV5o9eTnBLJ/HszWV0P73bc+Ff4nS/rJj+YaS6IGyiOL0VoBYX+l1Wrl3k63h/KrH+nhJ0XvQ==}
@@ -2066,9 +2110,17 @@ packages:
     resolution: {integrity: sha512-+Pgi+vMuUNkJyExiMBt5IlFoMyKnr5zhJ4Uspz58WOhBF5QoIZkFyNHIbBAtHwzVAgk5RtndVNsDRN61/mmDqg==}
     engines: {node: '>=12'}
 
+  is-redirect@1.0.0:
+    resolution: {integrity: sha512-cr/SlUEe5zOGmzvj9bUyC4LVvkNVAXu4GytXLNMr1pny+a65MpQ9IJzFHD5vi7FyJgb4qt27+eS3TuQnqB+RQw==}
+    engines: {node: '>=0.10.0'}
+
   is-regex@1.2.1:
     resolution: {integrity: sha512-MjYsKHO5O7mCsmRGxWcLWheFqN9DJ/2TmngvjKXihe6efViPqc274+Fx/4fYj/r03+ESvBdTXK0V6tA3rgez1g==}
     engines: {node: '>= 0.4'}
+
+  is-retry-allowed@1.2.0:
+    resolution: {integrity: sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==}
+    engines: {node: '>=0.10.0'}
 
   is-set@2.0.3:
     resolution: {integrity: sha512-iPAjerrse27/ygGLxw+EBR9agv9Y6uLeYVJMu+QNCoouJ1/1ri0mGrcWpfCqFZuzzx3WjtwxG098X+n4OuRkPg==}
@@ -2077,6 +2129,10 @@ packages:
   is-shared-array-buffer@1.0.4:
     resolution: {integrity: sha512-ISWac8drv4ZGfwKl5slpHG9OwPNty4jOWPRIhBpxOoD+hqITiwuipOQ2bNthAzwA3B4fIjO4Nln74N0S9byq8A==}
     engines: {node: '>= 0.4'}
+
+  is-stream@1.1.0:
+    resolution: {integrity: sha512-uQPm8kcs47jx38atAcWTVxyltQYoPT68y9aWYdV6yWXSyW8mzSat0TL6CiWdZeCdF3KrAvpVtnHbTv4RN+rqdQ==}
+    engines: {node: '>=0.10.0'}
 
   is-string@1.1.1:
     resolution: {integrity: sha512-BtEeSsoaQjlSPBemMQIrY1MY0uM6vnS1g5fmufYOtnxLGUZM2178PKbhsk7Ffv58IX+ZtcvoGwccYsh0PglkAA==}
@@ -2241,6 +2297,10 @@ packages:
   loose-envify@1.4.0:
     resolution: {integrity: sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==}
     hasBin: true
+
+  lowercase-keys@1.0.1:
+    resolution: {integrity: sha512-G2Lj61tXDnVFFOi8VZds+SoQjtQC3dgokKdDG2mTm1tx4m50NUHBOZSBwQQHyy0V12A0JTG4icfZQH+xPyh8VA==}
+    engines: {node: '>=0.10.0'}
 
   lowlight@1.20.0:
     resolution: {integrity: sha512-8Ktj+prEb1RoCPkEOrPMYUN/nCggB7qAWe3a7OpMjWQkh3l2RD5wKRQ+o8Q8YuI9RG/xs95waaI/E6ym/7NsTw==}
@@ -2603,6 +2663,10 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  prepend-http@1.0.4:
+    resolution: {integrity: sha512-PhmXi5XmoyKw1Un4E+opM2KcsJInDvKyuOumcjjw3waw86ZNjHwVUOOWLc4bCzLdcKNaWBH9e99sbWzDQsVaYg==}
+    engines: {node: '>=0.10.0'}
+
   prismjs@1.27.0:
     resolution: {integrity: sha512-t13BGPUlFDR7wRB5kQDG4jjl7XeuH6jbJGt11JHPL96qwsEHNX2+68tFXqc1/k+/jALsbSWJKUOT/hcYAZ5LkA==}
     engines: {node: '>=6'}
@@ -2779,6 +2843,9 @@ packages:
     resolution: {integrity: sha512-AURm5f0jYEOydBj7VQlVvDrjeFgthDdEF5H1dP+6mNpoXOMo1quQqJ4wvJDyRZ9+pO3kGWoOdmV08cSv2aJV6Q==}
     engines: {node: '>=0.4'}
 
+  safe-buffer@5.2.1:
+    resolution: {integrity: sha512-rp3So07KcdmmKbGvgaNxQSJr7bGVSVk5S9Eq1F+ppbRo70+YeaDxkw5Dd8NPN+GD6bjnYm2VuPuCXmpuYvmCXQ==}
+
   safe-push-apply@1.0.0:
     resolution: {integrity: sha512-iKE9w/Z7xCzUMIZqdBsp6pEQvwuEebH4vdpjcDWnyzaI6yl6O9FHvVpmGelvEHNsoY6wGblkxR6Zty/h00WiSA==}
     engines: {node: '>= 0.4'}
@@ -2947,6 +3014,10 @@ packages:
     resolution: {integrity: sha512-5S7Va8hKfV7W5U6g3aYxXmlPoZVAwUMy9AOKyF2fVuZa2UD3qZjg578OrLRt8PcNN1PleVaL/5/yYATNL0ICUw==}
     engines: {node: '>=18'}
 
+  timed-out@4.0.1:
+    resolution: {integrity: sha512-G7r3AhovYtr5YKOWQkta8RKAPb+J9IsO4uVmzjl8AZwfhs8UcUwTiD6gcJYSgOtzyjvQKrKYn41syHbUWMkafA==}
+    engines: {node: '>=0.10.0'}
+
   tiny-invariant@1.3.3:
     resolution: {integrity: sha512-+FbBPE1o9QAYvviau/qC5SE3caw21q3xkvWKBtja5vgqOWIHHJ3ioaq1VPfn/Szqctz2bU/oYeKd9/z5BL+PVg==}
 
@@ -3045,8 +3116,16 @@ packages:
   unrs-resolver@1.9.2:
     resolution: {integrity: sha512-VUyWiTNQD7itdiMuJy+EuLEErLj3uwX/EpHQF8EOf33Dq3Ju6VW1GXm+swk6+1h7a49uv9fKZ+dft9jU7esdLA==}
 
+  unzip-response@2.0.1:
+    resolution: {integrity: sha512-N0XH6lqDtFH84JxptQoZYmloF4nzrQqqrAymNj+/gW60AO2AZgOcf4O/nUXJcYfyQkqvMo9lSupBZmmgvuVXlw==}
+    engines: {node: '>=4'}
+
   uri-js@4.4.1:
     resolution: {integrity: sha512-7rKUyy33Q1yc98pQ1DAmLtwX109F7TIfWlW1Ydo8Wl1ii1SeHieeh0HHfPeL2fMXK6z0s8ecKs9frCuLJvndBg==}
+
+  url-parse-lax@1.0.0:
+    resolution: {integrity: sha512-BVA4lR5PIviy2PMseNd2jbFQ+jwSwQGdJejf5ctd1rEXt0Ypd7yanUK9+lYechVlN5VaTJGsu2U/3MDDu6KgBA==}
+    engines: {node: '>=0.10.0'}
 
   use-callback-ref@1.3.3:
     resolution: {integrity: sha512-jQL3lRnocaFtu3V00JToYz/4QkNWswxijDaCVNZRiRTO3HQDLsdu1ZtmIUvV4yPp+rvWm5j0y0TG/S61cuijTg==}
@@ -3140,8 +3219,8 @@ packages:
     peerDependencies:
       zod: ^3.24.1
 
-  zod@3.25.67:
-    resolution: {integrity: sha512-idA2YXwpCdqUSKRCACDE6ItZD9TZzy3OZMtpfLoh6oPR47lipysRrJfjzMqFxQ3uJuUPyUeWe1r9vLH33xO/Qw==}
+  zod@3.25.71:
+    resolution: {integrity: sha512-BsBc/NPk7h8WsUWYWYL+BajcJPY8YhjelaWu2NMLuzgraKAz4Lb4/6K11g9jpuDetjMiqhZ6YaexFLOC0Ogi3Q==}
 
   zustand@4.5.7:
     resolution: {integrity: sha512-CHOUy7mu3lbD6o6LJLfllpjkzhHXSBlX8B9+qPddUsIfeF5S/UZ5q0kmCsnRqT1UHFQZchNFDDzMbQsuesHWlw==}
@@ -3172,22 +3251,22 @@ snapshots:
 
   '@babel/runtime@7.27.6': {}
 
-  '@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))':
+  '@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))':
     dependencies:
-      '@crayonai/stream': 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67)
+      '@crayonai/stream': 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71)
       eventsource-parser: 3.0.3
       react: 19.1.0
       react-dom: 19.1.0(react@19.1.0)
       tailwind-merge: 2.6.0
       tailwindcss-animate: 1.0.7(tailwindcss@4.1.11)
       tiny-invariant: 1.3.3
-      zod: 3.25.67
+      zod: 3.25.71
       zustand: 4.5.7(@types/react@19.1.8)(react@19.1.0)
 
-  '@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))':
+  '@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))':
     dependencies:
-      '@crayonai/react-core': 0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
-      '@crayonai/stream': 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67)
+      '@crayonai/react-core': 0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
+      '@crayonai/stream': 0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71)
       '@floating-ui/react-dom': 2.1.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-accordion': 1.2.11(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
       '@radix-ui/react-aspect-ratio': 1.1.7(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
@@ -3222,13 +3301,13 @@ snapshots:
       - '@types/react-dom'
       - supports-color
 
-  '@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67)':
+  '@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71)':
     dependencies:
       best-effort-json-parser: 1.1.3
       eventsource-encoder: 1.0.1
       tiny-invariant: 1.3.3
-      zod: 3.25.67
-      zod-to-json-schema: 3.24.6(zod@3.25.67)
+      zod: 3.25.71
+      zod-to-json-schema: 3.24.6(zod@3.25.71)
 
   '@date-fns/tz@1.2.0': {}
 
@@ -4001,10 +4080,10 @@ snapshots:
       postcss: 8.5.6
       tailwindcss: 4.1.11
 
-  '@thesysai/genui-sdk@0.6.25(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(lucide-react@0.469.0(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+  '@thesysai/genui-sdk@0.6.25(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/react-ui@0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(lucide-react@0.469.0(react@19.1.0))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
     dependencies:
-      '@crayonai/react-core': 0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
-      '@crayonai/react-ui': 0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.67))(zod@3.25.67))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
+      '@crayonai/react-core': 0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
+      '@crayonai/react-ui': 0.7.16(@crayonai/react-core@0.7.6(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(eventsource-parser@3.0.3)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(tailwind-merge@2.6.0)(tailwindcss-animate@1.0.7(tailwindcss@4.1.11))(tiny-invariant@1.3.3)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0)))(@crayonai/stream@0.6.4(zod-to-json-schema@3.24.6(zod@3.25.71))(zod@3.25.71))(@types/react-dom@19.1.6(@types/react@19.1.8))(@types/react@19.1.8)(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zustand@4.5.7(@types/react@19.1.8)(react@19.1.0))
       clsx: 2.1.1
       htmlparser2: 10.0.0
       lodash: 4.17.21
@@ -4017,7 +4096,7 @@ snapshots:
       remark-gfm: 4.0.1
       remark-math: 6.0.0
       tiny-invariant: 1.3.3
-      zod: 3.25.67
+      zod: 3.25.71
     transitivePeerDependencies:
       - supports-color
 
@@ -4060,6 +4139,8 @@ snapshots:
 
   '@types/estree@1.0.8': {}
 
+  '@types/google-images@2.1.4': {}
+
   '@types/hast@2.3.10':
     dependencies:
       '@types/unist': 2.0.11
@@ -4073,6 +4154,10 @@ snapshots:
   '@types/json5@0.0.29': {}
 
   '@types/katex@0.16.7': {}
+
+  '@types/keyv@3.1.4':
+    dependencies:
+      '@types/node': 20.19.2
 
   '@types/mdast@4.0.4':
     dependencies:
@@ -4100,6 +4185,10 @@ snapshots:
   '@types/react@19.1.8':
     dependencies:
       csstype: 3.1.3
+
+  '@types/responselike@1.0.3':
+    dependencies:
+      '@types/node': 20.19.2
 
   '@types/unist@2.0.11': {}
 
@@ -4416,6 +4505,8 @@ snapshots:
 
   caniuse-lite@1.0.30001726: {}
 
+  capture-stack-trace@1.0.2: {}
+
   ccount@2.0.1: {}
 
   chalk@4.1.2:
@@ -4474,6 +4565,10 @@ snapshots:
   commander@8.3.0: {}
 
   concat-map@0.0.1: {}
+
+  create-error-class@3.0.2:
+    dependencies:
+      capture-stack-trace: 1.0.2
 
   cross-spawn@7.0.6:
     dependencies:
@@ -4617,6 +4712,8 @@ snapshots:
       call-bind-apply-helpers: 1.0.2
       es-errors: 1.3.0
       gopd: 1.2.0
+
+  duplexer3@0.1.5: {}
 
   emoji-regex@9.2.2: {}
 
@@ -5057,6 +5154,8 @@ snapshots:
       dunder-proto: 1.0.1
       es-object-atoms: 1.1.1
 
+  get-stream@3.0.0: {}
+
   get-symbol-description@1.1.0:
     dependencies:
       call-bound: 1.0.4
@@ -5082,7 +5181,27 @@ snapshots:
       define-properties: 1.2.1
       gopd: 1.2.0
 
+  google-images@2.1.0:
+    dependencies:
+      got: 6.7.1
+
   gopd@1.2.0: {}
+
+  got@6.7.1:
+    dependencies:
+      '@types/keyv': 3.1.4
+      '@types/responselike': 1.0.3
+      create-error-class: 3.0.2
+      duplexer3: 0.1.5
+      get-stream: 3.0.0
+      is-redirect: 1.0.0
+      is-retry-allowed: 1.2.0
+      is-stream: 1.1.0
+      lowercase-keys: 1.0.1
+      safe-buffer: 5.2.1
+      timed-out: 4.0.1
+      unzip-response: 2.0.1
+      url-parse-lax: 1.0.0
 
   graceful-fs@4.2.11: {}
 
@@ -5337,6 +5456,8 @@ snapshots:
 
   is-plain-obj@4.1.0: {}
 
+  is-redirect@1.0.0: {}
+
   is-regex@1.2.1:
     dependencies:
       call-bound: 1.0.4
@@ -5344,11 +5465,15 @@ snapshots:
       has-tostringtag: 1.0.2
       hasown: 2.0.2
 
+  is-retry-allowed@1.2.0: {}
+
   is-set@2.0.3: {}
 
   is-shared-array-buffer@1.0.4:
     dependencies:
       call-bound: 1.0.4
+
+  is-stream@1.1.0: {}
 
   is-string@1.1.1:
     dependencies:
@@ -5493,6 +5618,8 @@ snapshots:
   loose-envify@1.4.0:
     dependencies:
       js-tokens: 4.0.0
+
+  lowercase-keys@1.0.1: {}
 
   lowlight@1.20.0:
     dependencies:
@@ -6001,7 +6128,7 @@ snapshots:
       define-properties: 1.2.1
       es-object-atoms: 1.1.1
 
-  openai@4.104.0(zod@3.25.67):
+  openai@4.104.0(zod@3.25.71):
     dependencies:
       '@types/node': 18.19.113
       '@types/node-fetch': 2.6.12
@@ -6011,7 +6138,7 @@ snapshots:
       formdata-node: 4.4.1
       node-fetch: 2.7.0
     optionalDependencies:
-      zod: 3.25.67
+      zod: 3.25.71
     transitivePeerDependencies:
       - encoding
 
@@ -6092,6 +6219,8 @@ snapshots:
       source-map-js: 1.2.1
 
   prelude-ls@1.2.1: {}
+
+  prepend-http@1.0.4: {}
 
   prismjs@1.27.0: {}
 
@@ -6348,6 +6477,8 @@ snapshots:
       has-symbols: 1.1.0
       isarray: 2.0.5
 
+  safe-buffer@5.2.1: {}
+
   safe-push-apply@1.0.0:
     dependencies:
       es-errors: 1.3.0
@@ -6569,6 +6700,8 @@ snapshots:
       mkdirp: 3.0.1
       yallist: 5.0.0
 
+  timed-out@4.0.1: {}
+
   tiny-invariant@1.3.3: {}
 
   tinyglobby@0.2.14:
@@ -6718,9 +6851,15 @@ snapshots:
       '@unrs/resolver-binding-win32-ia32-msvc': 1.9.2
       '@unrs/resolver-binding-win32-x64-msvc': 1.9.2
 
+  unzip-response@2.0.1: {}
+
   uri-js@4.4.1:
     dependencies:
       punycode: 2.3.1
+
+  url-parse-lax@1.0.0:
+    dependencies:
+      prepend-http: 1.0.4
 
   use-callback-ref@1.3.3(@types/react@19.1.8)(react@19.1.0):
     dependencies:
@@ -6837,11 +6976,11 @@ snapshots:
 
   yocto-queue@0.1.0: {}
 
-  zod-to-json-schema@3.24.6(zod@3.25.67):
+  zod-to-json-schema@3.24.6(zod@3.25.71):
     dependencies:
-      zod: 3.25.67
+      zod: 3.25.71
 
-  zod@3.25.67: {}
+  zod@3.25.71: {}
 
   zustand@4.5.7(@types/react@19.1.8)(react@19.1.0):
     dependencies:

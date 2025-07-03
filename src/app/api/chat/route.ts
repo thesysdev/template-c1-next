@@ -1,56 +1,54 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextRequest } from "next/server";
 import OpenAI from "openai";
+import { tools } from "./tools";
 import { transformStream } from "@crayonai/stream";
-import { DBMessage, getMessageStore } from "./messageStore";
+import type { ChatCompletionMessageParam } from "openai/resources.mjs";
 import { SYSTEM_PROMPTS } from "./systemPrompts";
 
+type ThreadId = string;
+
+// A basic, in-memory message history store
+const messageStore: Map<ThreadId, ChatCompletionMessageParam[]> = new Map();
+
 export async function POST(req: NextRequest) {
-  const { prompt, threadId, responseId } = (await req.json()) as {
-    prompt: DBMessage;
-    threadId: string;
-    responseId: string;
+  const { prompt: latestMessage, threadId } = (await req.json()) as {
+    prompt: ChatCompletionMessageParam;
+    threadId: ThreadId;
   };
+
+  if (!messageStore.has(threadId)) {
+    messageStore.set(threadId, [{ role: "system", content: SYSTEM_PROMPTS }]);
+  }
+
+  pushLatestMessageToStore(threadId, latestMessage);
+
   const client = new OpenAI({
     baseURL: "https://api.thesys.dev/v1/embed/",
     apiKey: process.env.THESYS_API_KEY,
   });
-  const messageStore = getMessageStore(threadId);
 
-  messageStore.addMessage(prompt);
-  const messages: OpenAI.Chat.Completions.ChatCompletionMessageParam[] = [
-    ...((SYSTEM_PROMPTS
-      ? [{ role: "system", content: SYSTEM_PROMPTS }]
-      : []) as OpenAI.Chat.Completions.ChatCompletionMessageParam[]),
-    ...messageStore.messageList,
-  ].map((m) => ({
-    ...m,
-    id: undefined,
-  }));
-
-  const llmStream = await client.chat.completions.create({
-    model: "c1-nightly",
-    messages,
+  const runToolsResponse = client.beta.chat.completions.runTools({
+    model: `__MODEL__`,
+    temperature: `__TEMPERATURE__` as unknown as number,
+    messages: messageStore.get(threadId)!,
     stream: true,
+    tool_choice: tools.length > 0 ? 'auto' : 'none',
+    parallelToolCalls: true,
+    tools: tools,
   });
 
-  const responseStream = transformStream(
-    llmStream,
-    (chunk) => {
-      return chunk.choices[0].delta.content;
-    },
-    {
-      onEnd: ({ accumulated }) => {
-        const message = accumulated.filter((message) => message).join("");
-        messageStore.addMessage({
-          role: "assistant",
-          content: message,
-          id: responseId,
-        });
-      },
-    }
-  ) as ReadableStream<string>;
+  // Push the newly generated messages by the agent into the message history store
+  runToolsResponse.on("message", (event) =>
+    pushMessageToThread(threadId, event)
+  );
 
-  return new NextResponse(responseStream, {
+  const llmStream = await runToolsResponse;
+
+  const responseStream = transformStream(llmStream, (chunk) => {
+    return chunk.choices[0]?.delta?.content;
+  });
+
+  return new Response(responseStream as unknown as ReadableStream, {
     headers: {
       "Content-Type": "text/event-stream",
       "Cache-Control": "no-cache, no-transform",
@@ -58,3 +56,25 @@ export async function POST(req: NextRequest) {
     },
   });
 }
+
+/**
+ * Frontend sends the entire message history maintained on the FE. However, this does not include tool call messages as FE does not receive them.
+ * Extract only the latest user message from the request and push it to the backend message history store to generate a response with full context.
+ *
+ * @param messages - The message history maintained on the FE
+ */
+const pushLatestMessageToStore = (
+  threadId: ThreadId,
+  latestMessage: ChatCompletionMessageParam
+) => {
+  if (latestMessage.role === "user") {
+    pushMessageToThread(threadId, latestMessage);
+  }
+};
+
+const pushMessageToThread = (
+  threadId: ThreadId,
+  message: ChatCompletionMessageParam
+) => {
+  messageStore.set(threadId, [...messageStore.get(threadId)!, message]);
+};
