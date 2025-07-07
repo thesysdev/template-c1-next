@@ -29,16 +29,16 @@ export async function POST(req: NextRequest) {
 
   const runToolsResponse = client.beta.chat.completions.runTools({
     model: `__MODEL__`,
-    temperature: `__TEMPERATURE__` as unknown as number,
+    temperature: `__TEMPERATURE__`,
     messages: messageStore.get(threadId)!,
     stream: true,
-    tool_choice: tools.length > 0 ? 'auto' : 'none',
+    tool_choice: tools.length > 0 ? "auto" : "none",
     tools: tools,
   });
 
   // Push the newly generated messages by the agent into the message history store
   runToolsResponse.on("message", (event) =>
-    pushMessageToThread(threadId, event)
+    pushMessageToThread(threadId, event),
   );
 
   const llmStream = await runToolsResponse;
@@ -64,7 +64,7 @@ export async function POST(req: NextRequest) {
  */
 const pushLatestMessageToStore = (
   threadId: ThreadId,
-  latestMessage: ChatCompletionMessageParam
+  latestMessage: ChatCompletionMessageParam,
 ) => {
   if (latestMessage.role === "user") {
     pushMessageToThread(threadId, latestMessage);
@@ -73,7 +73,7 @@ const pushLatestMessageToStore = (
 
 const pushMessageToThread = (
   threadId: ThreadId,
-  message: ChatCompletionMessageParam
+  message: ChatCompletionMessageParam,
 ) => {
   messageStore.set(threadId, [...messageStore.get(threadId)!, message]);
 };

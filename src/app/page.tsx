@@ -5,23 +5,23 @@ import "@crayonai/react-ui/styles/index.css";
 import { Theme, themePresets } from "@crayonai/react-ui";
 
 export type ThemeFont =
-  | 'Inter'
-  | 'Roboto'
-  | 'Plus Jakarta Sans'
-  | 'Open Sans'
-  | 'Bitter'
-  | 'Merriweather'
-  | 'Playfair Display'
-  | 'Crimson Text'
-  | 'Geist'
-  | 'Figtree'
-  | 'Manrope'
-  | 'Work Sans'
-  | 'DM Sans'
-  | 'IBM Plex Serif'
-  | 'Space Mono'
-  | 'Geist Mono'
-  | 'Host Grotesk'
+  | "Inter"
+  | "Roboto"
+  | "Plus Jakarta Sans"
+  | "Open Sans"
+  | "Bitter"
+  | "Merriweather"
+  | "Playfair Display"
+  | "Crimson Text"
+  | "Geist"
+  | "Figtree"
+  | "Manrope"
+  | "Work Sans"
+  | "DM Sans"
+  | "IBM Plex Serif"
+  | "Space Mono"
+  | "Geist Mono"
+  | "Host Grotesk";
 
 const generateTypography = () => ({
   fontPrimary: `400 16px/20px __FONT__`,
@@ -53,16 +53,13 @@ const generateTypography = () => ({
   shadowM: "0px 4px 6px rgba(0, 0, 0, 0.04)",
   shadowL: "0px 1px 8px rgba(0, 0, 0, 0.08)",
   shadowXl: "0px 10px 15px rgba(0, 0, 0, 0.1)",
-})
+});
 
 const theme = {
-  ...`__THEME_CONFIG__` as Theme,
-  ...generateTypography()
-}
+  ...(`__THEME_CONFIG__` as Theme),
+  ...generateTypography(),
+};
 
 export default function Home() {
-  return <C1Chat 
-    apiUrl="/api/chat"
-    theme={{ theme }}
-  />;
+  return <C1Chat apiUrl="/api/chat" theme={{ theme }} />;
 }

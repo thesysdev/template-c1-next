@@ -5,10 +5,10 @@ import { googleImageTool } from "./tools/googleImage";
 /**
  * Collection of tools available to the AI agent.
  * Each tool is a function that the AI can use to perform specific tasks.
- * 
+ *
  * Current tools:
  * - googleImageTool: Fetches image URLs based on text descriptions
- * 
+ *
  * ADD MORE TOOLS HERE TO EXTEND THE AI'S CAPABILITIES
  */
 
