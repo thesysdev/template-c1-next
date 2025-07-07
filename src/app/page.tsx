@@ -55,9 +55,14 @@ const generateTypography = () => ({
   shadowXl: "0px 10px 15px rgba(0, 0, 0, 0.1)",
 })
 
+const theme = {
+  ...`__THEME_CONFIG__` as Theme,
+  ...generateTypography()
+}
+
 export default function Home() {
   return <C1Chat 
     apiUrl="/api/chat"
-    theme={{ theme: `__THEME_CONFIG__` as Theme, ...generateTypography() }}
+    theme={{ theme }}
   />;
 }
