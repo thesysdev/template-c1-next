@@ -33,7 +33,6 @@ export async function POST(req: NextRequest) {
     messages: messageStore.get(threadId)!,
     stream: true,
     tool_choice: tools.length > 0 ? 'auto' : 'none',
-    parallelToolCalls: true,
     tools: tools,
   });
 
