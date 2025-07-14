@@ -1,6 +1,7 @@
 import type { RunnableToolFunctionWithParse } from "openai/lib/RunnableFunction.mjs";
 import type { RunnableToolFunctionWithoutParse } from "openai/lib/RunnableFunction.mjs";
 import { googleImageTool } from "./tools/googleImage";
+import { weatherTool } from "./tools/weather";
 
 /**
  * Collection of tools available to the AI agent.
@@ -14,5 +15,6 @@ import { googleImageTool } from "./tools/googleImage";
 
 export const tools: (
   | RunnableToolFunctionWithoutParse
-  | RunnableToolFunctionWithParse<{ altText: string }>
-)[] = [googleImageTool];
+  | RunnableToolFunctionWithParse<{ altText: string[] }>
+  | RunnableToolFunctionWithParse<{ location: string }>
+)[] = [googleImageTool, weatherTool];
