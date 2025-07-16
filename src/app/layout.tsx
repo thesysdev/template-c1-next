@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { fonts } from "./font";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -17,7 +18,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={fonts.map((font) => font.variable).join(" ")}>
       <body className={`${inter.className} antialiased`}>{children}</body>
     </html>
   );
