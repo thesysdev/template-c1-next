@@ -1,6 +1,6 @@
 # C1 App Template
 
-Template repository for a generative UI chat client, bootstrapped with `create-next-app`, and powered by [C1 by Thesys](https://thesys.dev)
+Template repository for a generative UI chat client, powered by [C1 by Thesys](https://thesys.dev), and bootstrapped with `create-next-app`
 
 [![Built with Thesys](https://thesys.dev/built-with-thesys-badge.svg)](https://thesys.dev)
 
