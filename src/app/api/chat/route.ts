@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   messageStore.addMessage(prompt);
 
   const llmStream = await client.chat.completions.create({
-    model: "c1-nightly",
+    model: "c1/anthropic/claude-sonnet-4/v-20250815",
     messages: messageStore.getOpenAICompatibleMessageList(),
     stream: true,
   });
