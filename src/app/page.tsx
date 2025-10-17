@@ -1,6 +1,6 @@
 "use client";
 
-import { C1Chat } from "@thesysai/genui-sdk";
+import { C1Chat, ThemeProvider } from "@thesysai/genui-sdk";
 import "@crayonai/react-ui/styles/index.css";
 import { Theme, themePresets } from "@crayonai/react-ui";
 
@@ -58,8 +58,12 @@ const generateTypography = () => ({
 const theme = {
   ...(`__THEME_CONFIG__` as Theme),
   ...generateTypography(),
-};
+} as Theme;
 
 export default function Home() {
-  return <C1Chat apiUrl="/api/chat" theme={{ theme }} />;
+  return (
+    <ThemeProvider theme={theme}>
+      <C1Chat apiUrl="/api/chat" />
+    </ThemeProvider>
+  );
 }
