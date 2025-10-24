@@ -7,25 +7,22 @@ import styles from "./page.module.scss";
 import { useTheme } from "@crayonai/react-ui/ThemeProvider";
 import { theme, darkTheme, themeMode } from "@/theme";
 
-// const ChatInternal = () => {
-//   const { portalThemeClassName } = useTheme();
-
-//   return (
-//     <>
-//       <style>{__CUSTOM_THEME_STYLE__}</style>
-//       <C1Chat apiUrl="/api/chat" />
-//     </>
-//   );
-// };
-
-export default function Home() {
+const ChatInternal = () => {
   const { portalThemeClassName } = useTheme();
 
   return (
+    <>
+      <style>{__CUSTOM_THEME_STYLE__}</style>
+      <C1Chat apiUrl="/api/chat" disableThemeProvider />
+    </>
+  );
+};
+
+export default function Home() {
+  return (
     <div className={clsx("!h-full !w-full", styles["chat-theme"])}>
       <ThemeProvider theme={theme} darkTheme={darkTheme} mode={themeMode}>
-        <style>{__CUSTOM_THEME_STYLE__}</style>
-        <C1Chat apiUrl="/api/chat" />
+        <ChatInternal />
       </ThemeProvider>
     </div>
   );
