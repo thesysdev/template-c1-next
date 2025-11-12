@@ -10,7 +10,7 @@
     "format:fix": "prettier --write ."
   },
   "dependencies": {
-    "@crayonai/react-ui": "^0.8.41",
+    "@crayonai/react-ui": "^0.9.0",
     "@crayonai/stream": "^0.6.4",
     "@google/genai": "^1.0.0",
     "@mozilla/readability": "^0.6.0",
