@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
   messageStore.addMessage(prompt);
 
   const llmStream = await client.chat.completions.create({
-    model: "c1/openai/gpt-5/v-20260105",
+    model: "c1/openai/gpt-5/v-20251130",
     messages: messageStore.getOpenAICompatibleMessageList(),
     stream: true,
   });
