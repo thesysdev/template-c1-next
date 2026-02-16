@@ -12,7 +12,8 @@
     "@crayonai/react-core": "^0.7.6",
     "@crayonai/react-ui": "^0.9.8",
     "@crayonai/stream": "^0.6.4",
-    "@thesysai/genui-sdk": "^0.7.8",
+    "@thesysai/genui-sdk": "^0.8.3",
+    "lucide-react": "^0.564.0",
     "next": "15.2.8",
     "openai": "^4.91.1",
     "react": "^19.0.0",
@@ -30,6 +31,9 @@
     "lightningcss": "^1.29.2",
     "tailwindcss": "^4",
     "typescript": "^5"
+  },
+  "overrides": {
+    "lucide-react": "^0.564.0"
   },
   "engines": {
     "node": ">=20.9.0"
